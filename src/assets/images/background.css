@@ -1,0 +1,148 @@
+/* 登录页背景样式 */
+.login-bg {
+  background: #f8f6f1; /* 奶白色背景 */
+  position: relative;
+  overflow: hidden;
+}
+
+.login-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23e6e2d3" fill-opacity="0.4" d="M0,192L48,176C96,160,192,128,288,133.3C384,139,480,181,576,186.7C672,192,768,160,864,133.3C960,107,1056,85,1152,90.7C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.6;
+}
+
+.login-bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(230, 226, 211, 0.3) 0%, transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(230, 226, 211, 0.4) 0%, transparent 30%);
+}
+
+/* 奶白色背景效果 */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f8f6f1; /* 奶白色背景 */
+  background-image: radial-gradient(circle at 85% 15%, #f0ede4 0%, transparent 40%),
+                    radial-gradient(circle at 15% 85%, #f0ede4 0%, transparent 40%);
+  z-index: 0;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: rgba(107, 90, 62, 0.08); /* 调整星星颜色为更淡的棕色，减少视觉干扰 */
+  border-radius: 50%;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+}
+
+/* 登录框样式增强 */
+.login-box {
+  box-shadow: 0 10px 30px rgba(166, 139, 91, 0.15);
+  border: 1px solid rgba(214, 208, 187, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* 创建轻柔的波浪背景元素 */
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03; /* 降低波浪的不透明度，使效果更加柔和 */
+  background: radial-gradient(ellipse at center, rgba(166, 139, 91, 0.2) 0%, rgba(230, 226, 211, 0.1) 70%, rgba(248, 246, 241, 0) 100%);
+  animation: wave 20s infinite linear;
+}
+
+.wave:nth-child(2) {
+  animation-delay: -5s;
+  animation-duration: 25s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: -10s;
+  animation-duration: 30s;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* 鼠标拖尾效果 */
+.cursor-trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(166, 139, 91, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.8s ease;
+}
+
+/* 烟花效果 */
+.firework {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.firework-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
